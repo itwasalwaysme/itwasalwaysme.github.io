@@ -80,3 +80,9 @@ span a:hover {
     border-bottom: 1px solid #00ffff;
     padding-bottom: 0.2rem;
 }
+
+.error {
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}

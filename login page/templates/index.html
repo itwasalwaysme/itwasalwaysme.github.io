@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>Login Page</title>
 </head>
+
 <body>
     <div class="container">
         <div class="container-login">
             <form action="" method="post">
-            USER <input type="text" class="put" name="user">
-            PASSWORD <input type="password" class="put" name="password">
-            <input type="submit" class="button" value="Login"><br>
-            <span>no login? <a href="/registrar">Register here</a></span>
+                USER <input type="text" class="put" name="user">
+                PASSWORD <input type="password" class="put" name="password">
+                <input type="submit" class="button" value="Login">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="error" >{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <span>no login? <a href="/registrar">Register here</a></span>
         </div>
     </div>
 </body>
+
 </html>
