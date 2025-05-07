@@ -37,7 +37,6 @@ def registrar():
         user = request.form['user']
         password = request.form['password']
         verify = db.session.query(Usuarios).filter_by(username=user).first()
-        print(verify)
         if verify:
             flash("user not available")
             return redirect(url_for('registrar'))
